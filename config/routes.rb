@@ -1,4 +1,3 @@
-require_relative '../lib/api_constraints'
 Rails.application.routes.draw do
   root to: 'home#index'
   namespace :api, defaults: { format: 'json' } do
