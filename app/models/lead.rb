@@ -1,4 +1,3 @@
 class Lead < ActiveRecord::Base
-
-  validates_uniqueness_of :first_name
+  validates :first_name, :last_name, presence: true
 end
