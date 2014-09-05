@@ -3,11 +3,13 @@
 
 ## Some known best practices
 
-1. Use nested module/class definitions instead of compact style.
+
+### Use nested module/class definitions instead of compact style.
 
 Preferred:
 
 ```ruby
+# app/controllers/api/v1/leads_controller.rb
 module Api
   module V1
     class LeadsController < ApplicationController
@@ -20,6 +22,7 @@ end
 Not preferred:
 
 ```ruby
+# app/controllers/api/v1/leads_controller.rb
 class Api::V1::LeadsController < ApplicationController
   respond_to :json
   # methods
@@ -50,3 +53,30 @@ namespace :api do
 end
 ```
 
+### A JSON API document should be dentified by the media type `application/vnd.api+json`
+
+We achieve this by autoloading a module:
+
+```ruby
+# lib/api_constraints.rb 
+class ApiConstraints
+  def initialize(options)
+    @version = options[:version]
+    @default = options[:default]
+  end
+
+  def matches?(req)
+    @default || req.headers['Accept'].include?("application/vnd.myapp.v#{@version}")
+  end
+end
+```
+
+And updating routes to use this module:
+
+```ruby
+namespace :api, defaults: { format: 'json' } do
+  scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+    resources :leads
+  end
+end
+```
