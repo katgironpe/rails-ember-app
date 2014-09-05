@@ -1,4 +1,4 @@
-# Rails and Ember App
+# Rails and Ember.js App
 
 
 ## Some known best practices
