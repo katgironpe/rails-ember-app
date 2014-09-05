@@ -91,3 +91,8 @@ DS.RESTAdapter.reopen
     "Accept": "application/vnd.myapp.v1+json"
   }
 ```
+
+## Resources
+
+* <a href="http://ember.vicramon.com/creating-the-rails-api" target="_blank">Vic Ramon's Ember tutorial</a>
+* <a href="https://github.com/json-api/json-api" target="_blank">JSON API</a>
