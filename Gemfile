@@ -15,6 +15,10 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
+  gem 'better_errors', '~> 2.0'
+  gem 'growl', require: false
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop', require: false
   gem 'spring'
 end
 
