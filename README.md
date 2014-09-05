@@ -80,3 +80,14 @@ namespace :api, defaults: { format: 'json' } do
   end
 end
 ```
+
+Making this work with Ember.js is simple.
+Simply include `headers` on `app/assets/javascripts/store.js.coffee`
+
+```coffee
+DS.RESTAdapter.reopen
+  namespace: 'api'
+  headers: {
+    "Accept": "application/vnd.myapp.v1+json"
+  }
+```
