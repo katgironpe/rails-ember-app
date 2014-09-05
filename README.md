@@ -53,7 +53,7 @@ namespace :api do
 end
 ```
 
-### A JSON API document should be dentified by the media type `application/vnd.api+json`
+### A JSON API document should be identified by the media type `application/vnd.api+json`
 
 We achieve this by autoloading a module:
 
