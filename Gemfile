@@ -14,6 +14,10 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+group :test, :development do
+  gem 'jasmine-rails'
+end
+
 group :development do
   gem 'better_errors', '~> 2.0'
   gem 'growl', require: false
