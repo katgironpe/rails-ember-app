@@ -75,7 +75,7 @@ And updating routes to use this module:
 
 ```ruby
 namespace :api, defaults: { format: 'json' } do
-  scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+  scope module: :v1, constraints: ApiConstraints.new(version: 1) do
     resources :leads
   end
 end
@@ -96,3 +96,4 @@ DS.RESTAdapter.reopen
 
 * <a href="http://ember.vicramon.com/creating-the-rails-api" target="_blank">Vic Ramon's Ember tutorial</a>
 * <a href="https://github.com/json-api/json-api" target="_blank">JSON API</a>
+* <a href="http://railscasts.com/episodes/350-rest-api-versioning" target="_blank">REST API Versioning</a>
